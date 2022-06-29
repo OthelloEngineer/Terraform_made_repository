@@ -11,8 +11,9 @@ resource "github_repository" "my_repository" {
 }
 
 resource "github_branch" "init_branch" {
-  repository = github_repository.my_repository.name
-  branch     = "terraform_branch"
+  repository    = github_repository.my_repository.name
+  branch        = "terraform_branch"
+  source_branch = github_repository.my_repository.default_branch
 }
 
 resource "github_branch" "start_from_init" {
