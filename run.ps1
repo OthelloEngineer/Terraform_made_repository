@@ -2,6 +2,14 @@ param(
     [Parameter(Mandatory=$true)]
     [string] $GITHUB_TOKEN
 )
+$software = "+";
+
+$string = dir env:path | select-Object -property Value
+$installed = ($string -like "*scoop*")
+If(-Not $installed) {
+	Invoke-RestMethod get.scoop.sh | Invoke-Expression
+    write-host "scoop installed"
+}
 
 scoop install terraform
 Write-host "Terraform Installed"
