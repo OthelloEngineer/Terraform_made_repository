@@ -1,5 +1,5 @@
 param(
-    [Parameter(Mandatory)]
+    [Parameter(Mandatory=$true)]
     [string] $GITHUB_TOKEN
 )
 
