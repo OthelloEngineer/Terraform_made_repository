@@ -1,0 +1,1 @@
+Hello, this is an awesome repository made entirely from a terraform script
