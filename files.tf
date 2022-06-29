@@ -8,7 +8,7 @@ resource "github_repository_file" "files_tf" {
 
 resource "github_repository_file" "readme" {
   repository = github_repository.my_repository.name
-  branch     = "terraform_branch"
+  branch     = github_repository.my_repository.default_branch
   file       = "readme.md"
   content    = file("${path.module}/readme.md")
 }
